@@ -10,6 +10,7 @@ var beeper = require('beeper');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
+// var tailwind = require('tailwindcss');
 var colorFunction = require('postcss-color-function');
 var cssnano = require('cssnano');
 var customProperties = require('postcss-custom-properties');
@@ -41,6 +42,7 @@ function css(done) {
         easyimport,
         customProperties({preserve: false}),
         colorFunction(),
+        // tailwind(),
         autoprefixer(),
         cssnano()
     ];

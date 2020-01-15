@@ -1,0 +1,13 @@
+
+.sans-serif {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+
+.spaced-text {
+    letter-spacing: .05em;
+}
+
+.main-navigation {
+    max-width: 1200px;
+    margin: auto;
+}

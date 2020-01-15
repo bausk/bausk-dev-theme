@@ -1,7 +1,7 @@
 /* Reset
 /* ---------------------------------------------------------- */
 
-html,
+/* html,
 body,
 div,
 span,
@@ -84,7 +84,7 @@ video {
     font: inherit;
     font-size: 100%;
     vertical-align: baseline;
-}
+} */
 body {
     line-height: 1;
 }
@@ -371,7 +371,7 @@ h1 {
 
 h2 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 4rem;
+    font-size: 2rem;
 }
 @media (max-width: 500px) {
     h2 {
