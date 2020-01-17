@@ -7,7 +7,7 @@ services:
       - 2368:2368
     volumes: 
       - .:/var/lib/ghost/content/themes/ghost-theme
-      - ./ghost-data:/var/lib/ghost/content
+      - ../ghost-data:/var/lib/ghost/content
     environment: 
       - NODE_ENV=development
     command: >
