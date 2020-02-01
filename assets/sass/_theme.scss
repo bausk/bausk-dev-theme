@@ -1,0 +1,32 @@
+$accent-color-primary-bright: #d47807;
+$accent-color-secondary-bright: #e52e71;
+$accent-color-primary-tame: #ffaf50;
+$accent-color-secondary-tame: #ff75bf;
+$background-color-primary: #dfe4fe;
+
+$gold            : rgb(212, 203, 75);
+$primary-color   : $gold;
+$secondary-color : #ddd;
+$mark-color      : #feda9e;
+
+$accent-color: #fa5e21;
+$tame-color: #d98dff;
+
+$code-font       : Menlo,Monaco,Lucida Console,Liberation Mono, DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace, serif;
+$line-height     : 1.8em;
+
+$link-color : #a84aff;
+$link-text-color: #181716;
+
+
+.primary {
+  color: $primary-color;
+}
+
+.bg-primary {
+//   background-color: $near-white;
+}
+
+.bg-inverted {
+  background-color: #681533;
+}

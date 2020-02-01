@@ -1,0 +1,8 @@
+<div>
+    <a class="{{class}}" href="{{#has tag="aside"}}{{canonical_url}}{{else}}{{url}}{{/has}}"
+        target="{{#has tag="aside"}}_blank{{else}}_self{{/has}}" rel="{{#has tag="aside"}}noopener noreferrer{{/has}}"
+        style="{{style}}">
+        {{title}}</a>
+    {{#has tag="aside"}} &nbsp;<i class="fas fa-external-link-alt external-icon"></i>
+    {{/has}}
+</div>

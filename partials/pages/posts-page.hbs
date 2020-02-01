@@ -1,0 +1,55 @@
+{{#post}}
+<header class="heading-sans cover bg-center">
+  <div class="flex items-center justify-center bg-center cover" style="background-image: url({{feature_image}});">
+    <div class="tc post-header-background">
+      <h1 class="f1-l lh-title dib bg-white heading-sans ttu ph4 pv4 mt3 mb0 heading-styled">
+        {{title}}
+      </h1>
+    </div>
+  </div>
+</header>
+
+<section class="visited bg-white sans-serif near-black pa4-l pa3">
+  <ul class="list pl0 mauto ph5-l max-width-large">
+    <h2 class="f2 pl3 mt5 serif year-plaque">2020</h2>    
+    {{#get "posts" include="tags" filter="published_at:<='2020-12-31'+published_at:>'2019-12-31'"}}
+      {{#foreach posts}}
+        <li class="flex flex-row-l flex-column-reverse justify-between items-center-l mb2-l mb4">
+          {{> "landing/post-link" class="near-black link link-underline f3-l f4 lh-copy"}}
+          <date class="ttu f6 b mr2 tracked gray fr-l db">
+             {{date}}
+          </date>
+        </li>
+      {{/foreach}}
+    {{/get}}
+    <h2 class="f2 pl3 mt5 serif year-plaque">2019</h2>    
+    {{#get "posts" include="tags" filter="published_at:<='2019-12-31'+published_at:>'2018-12-31'"}}
+      {{#foreach posts}}
+        <li class="flex flex-row-l flex-column-reverse justify-between items-center-l mb2-l mb4">
+          {{> "landing/post-link" class="near-black link link-underline f3-l f4 lh-copy"}}
+          <date class="ttu f6 b mr2 tracked gray fr-l db">
+             {{date}}
+          </date>
+        </li>
+      {{/foreach}}
+    {{/get}}
+    <h2 class="f2 pl3 mt5 serif year-plaque">2018</h2>    
+    {{#get "posts" include="tags" filter="published_at:<='2018-12-31'+published_at:>'2017-12-31'"}}
+      {{#foreach posts}}
+        <li class="flex flex-row-l flex-column-reverse justify-between items-center-l mb2-l mb4">
+          {{> "landing/post-link" class="near-black link link-underline f3-l f4 lh-copy"}}
+          <date class="ttu f6 b mr2 tracked gray fr-l db">
+             {{date}}
+          </date>
+        </li>
+      {{/foreach}}
+    {{/get}}    
+  </ul>
+
+</section>
+<style>
+  .layout-default h2:first-child {
+    margin-top: 0;
+  }
+</style>
+{{/post}}

@@ -1,0 +1,44 @@
+<div class="w-100 relative z-1 bg-near-white">
+    <nav class="sans-serif nearb-black dt w-100 border-box pv2-l ph3 max-width-large mauto">
+        <div class="center mw7 pv1 ph3 tc flex justify-around">
+            {{#if home}}
+                <a class="navbar-button heading-sans link-underline"
+                    href="{{home}}">Home</a>
+            {{/if}}
+            {{#foreach navigation}}
+                <a class="navbar-button heading-sans link-underline {{#if current}}fw5{{/if}}"
+                href="{{url absolute="true"}}">{{label}}</a>
+            {{/foreach}}
+            {{#if github}}
+                <a class="navbar-button heading-sans link-underline"
+                target="_blank"
+                    href="{{github}}">Github</a>
+            {{/if}}
+        </div>
+    </nav>
+</div>
+<div class="w-100 relative z-1 subdivider">
+</div>
+<div class="w-100 divider relative z-0">
+    <div id="skewer" class="w-100 skewer">
+    </div>
+</div>
+<script>
+    const f = (e) => {
+        const h = 64;
+        const w = window.innerWidth;
+        const relW = e.clientX || 0;
+        const ratio = relW / w;
+        const maxAngle = Math.atan(h / window.innerWidth);
+        var t = Math.abs(ratio * 2 - 1);
+        const a = (--t) * t * t + 1;
+        const angle = - ratio * 20 + 10;
+        const pacify = maxAngle / 20;
+        const realAngle = angle * pacify * a;
+        const effective = realAngle;
+        const elem = document.getElementById("skewer");
+        elem.style.transform = `skew(0deg, ${effective}rad)`;
+    };
+    window.addEventListener("mousemove", f);
+    window.addEventListener("resize", f);
+</script>
