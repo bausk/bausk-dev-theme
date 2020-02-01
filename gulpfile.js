@@ -15,6 +15,7 @@ var colorFunction = require('postcss-color-function');
 var cssnano = require('cssnano');
 var customProperties = require('postcss-custom-properties');
 var easyimport = require('postcss-easy-import');
+var sass = require('@csstools/postcss-sass')
 
 function serve(done) {
     livereload.listen();
@@ -39,6 +40,9 @@ function hbs(done) {
 
 function css(done) {
     var processors = [
+        sass({
+            includePaths: ['node_modules', 'assets/css/*.scss', 'assets/sass/*.scss']
+          }),
         easyimport,
         customProperties({preserve: false}),
         colorFunction(),
@@ -81,8 +85,9 @@ function zipper(done) {
 }
 
 const cssWatcher = () => watch('assets/css/**', css);
+const sassWatcher = () => watch('assets/sass/**', css);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
-const watcher = parallel(cssWatcher, hbsWatcher);
+const watcher = parallel(cssWatcher, sassWatcher, hbsWatcher);
 const build = series(css, js);
 const dev = series(build, serve, watcher);
 

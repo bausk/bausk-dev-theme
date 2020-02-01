@@ -1,8 +1,8 @@
 version: '3'
 services:
   blog:
-    image: ghost:latest
-    working_dir: /var/lib/ghost/current
+    image: ghost:3
+    # working_dir: /var/lib/ghost
     ports: 
       - 2368:2368
     volumes: 
@@ -11,4 +11,13 @@ services:
     environment: 
       - NODE_ENV=development
     command: >
-      bash -c "rm -rf node_modules && bash /usr/local/bin/docker-entrypoint.sh node /var/lib/ghost/current/index.js"
+      bash -c "bash /usr/local/bin/docker-entrypoint.sh node current/index.js"
+  watch:
+    image: node:lts-buster-slim
+    working_dir: /app
+    volumes: 
+      - .:/app
+    environment: 
+      - NODE_ENV=development
+    command: >
+      bash -c "yarn && yarn dev"

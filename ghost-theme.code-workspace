@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"built/**": true
+		},
+		"search.exclude": {
+			"**/assets/built": true
+		}
+	}
+}
