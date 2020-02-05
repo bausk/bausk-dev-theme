@@ -1,9 +1,9 @@
 :root {
-    --base:              #a2705d;
+    --base:              #eaede9;
     --bg-blend:          luminosity;
     --blur:              0px;
-    --fg-blend:          color;
-    --foreground:        #ff7843;
+    --fg-blend:          color-dodge;
+    --foreground:        #586056;
     --opacity:           1;
     --spacing:           0%;
 }

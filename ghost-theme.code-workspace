@@ -10,6 +10,14 @@
 		},
 		"search.exclude": {
 			"**/assets/built": true
-		}
+		},
+		"CSSNavigation.excludeGlobPatterns": [
+			"**/node_modules/**",
+			"**/bower_components/**",
+			"**/vendor/**",
+			"**/coverage/**",
+			"**/built/**",
+			"**/dist/**"
+		]
 	}
 }

@@ -15,8 +15,9 @@ production stylesheet in assets/built/screen.css using gulp dev
 @import "vars.css";
 @import 'font-awesome/all.css';
 /* @import "components/global.css"; */
-@import "components/ghost.css";
+/* @import "components/ghost.css"; */
 @import "components/lists.css";
+@import "components/prism.css";
 @import "components/grid.css";
 @import "components/tables.css";
 @import "components/forms.css";

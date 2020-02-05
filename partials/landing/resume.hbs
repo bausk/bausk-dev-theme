@@ -1,39 +1,60 @@
-<section class="bg-primary sans-serif near-black ph4-l">
-  <header class="mauto max-width-large ph4-l ph0-ns pb4 pt6 cover bg-center">
-    <div class="flex justify-center flex-row-l flex-column items-center">
-      <div class="mw7-l mw5 pr4-l pb0-l pb3">
+<section class="bg-primary sans-serif-secondary near-black ph4-l">
+  <header class="mauto max-width-large ph4-l ph0-ns pb4 pt5 pt6-l cover bg-center">
+    <div class="flex justify-center flex-row-l flex-column items-center items-start-l">
+      <div class="mw5-l mw4 pr4-l pb0-l pb3">
         <div class="img-wrapper br-100">
           <img src="/assets/images/avatar.jpg" class="br-100" />
         </div>
       </div>
-      <div class="ph2-l ph4 sans-serif fade-in fade-in-delay-small">
+      <div class="ph2-l ph4 fade-in fade-in-delay-small mw7-l">
         <div class="tl-l tc">
-          <h2 class="f3-l f3 lh-title mt0">Hi, I'm Oleksander Bausk,</h2>
-          <h3 class="f4-l f4 fw3">fullstack expert, consultant, and dog of war.</h3>
-        </div>
-
-        <div class="flex flex-row flex-wrap">
-          <dl class="lh-title flex flex-row w-100 w-auto-l mw6-l mr0 mr4-l items-center justify-center justify-start-l">
-              <dd class="f6 fw3 ml0 mr1">Based in:</dd>
-              <dd class="f4 f3-l ml0">Dnipro, Ukraine</dd>
-          </dl>
-          <dl class="lh-title flex flex-row w-100 w-auto-l mw6-l mr0 mr4-l items-center justify-center justify-start-l">
-              <dd class="f6 fw3 ml0 mr1">Languages:</dd>
-              <dd class="f4 f3-l ml0">Python, JavaScript, C#</dd>
-          </dl>
-          <dl class="lh-title flex flex-row w-100 w-auto-l mw6-l mr0 mr4-l items-center justify-center justify-start-l">
-              <dd class="f6 fw3 ml0 mr1">Technologies:</dd>
-              <dd class="f4 f3-l ml0">AWS, ML, Docker, React</dd>
-          </dl>
-          <dl class="lh-title flex flex-row w-100 w-auto-l mw6-l mr0 mr4-l items-center justify-center justify-start-l">
-              <dd class="f6 fw3 ml0 mr1">Interests:</dd>
-              <dd class="f4 f3-l ml0">ML, JAMStack, Engineering, Automation</dd>
-          </dl>
-        </div>
-        <div class="pt4 fade-in fade-in-delay-large flex flex-row justify-around">
-          {{> landing/social-links }}
+          <h2 class="serif f2-l f3 lh-title mt0">Hey, I'm Oleksander Bausk, fullstack engineer and all-around smartass.</h2>
+          <h3 class="f3-l f4 fw3 lh-title">
+            The engineering business is my passion. I could go on for hours about distributed teams, value delivery
+            and model-based automation here but you're probably better off checking out my <a href="{{@site.url}}/blog">posts</a>, or my <a href="{{@site.url}}/resume">resume</a> if you're into that sort of stuff.
+          </h3>
+          <h3 class="f3-l f4 fw3 lh-title">
+            I'm always happy to chat at <a href="mailto:bauskas@gmail.com">bauskas@gmail.com</a>.
+            Oh, and if you need remote, cost-effective developers who take ownership seriously, contact my team at <a href="mailto:vyartseva@webinerds.com">vyartseva@webinerds.com</a>
+          </h3>
         </div>
       </div>
+    </div>
+    <div class="flex flex-row flex-wrap pv3-l pv2 mh2 mh0-l fade-in fade-in-delay-large">
+      <dl class="shard lh-title flex flex-column w-100 w-auto-l mw5-l mr0 mr4-l items-center justify-center">
+          <dt class="pb1-l f4 fw3 ml0 mr1 mv1 heading-sans">Based in:</dt>
+          <dd class="tc f4 f4-l ml0 fw3"><a target="_blank" href="https://en.wikipedia.org/wiki/Dnipro">Dnipro</a>, <a target="_blank" href="https://en.wikipedia.org/wiki/Ukraine">Ukraine</a></dt>
+      </dl>
+      <dl class="shard lh-title flex flex-column w-100 w-auto-l mw5-l mr0 mr4-l items-center justify-center">
+          <dt class="pb1-l f4 fw3 ml0 mr1 mv1 heading-sans">Core Languages:</dt>
+          <dd class="tc f4 f4-l ml0 fw3">Python, JavaScript</dd>
+      </dl>
+      <dl class="shard lh-title flex flex-column w-100 w-auto-l mw5-l mr0 mr4-l items-center justify-center">
+          <dt class="pb1-l f4 fw3 ml0 mr1 mv1 heading-sans">Also:</dt>
+          <dd class="tc f4 f4-l ml0 fw3">HTML5, CSS/SASS, SQL, <a href="{{@site.url}}/resume#secondary">...</a></dd>
+      </dl>
+      <dl class="shard lh-title flex flex-column w-100 w-auto-l mw6-l mr0 mr4-l items-center justify-center">
+          <dt class="pb1-l f4 fw3 ml0 mr1 mv1 heading-sans">Backend:</dt>
+          <dd class="tc f4 f4-l ml0 fw3">AWS, GCP, Docker, k8s, Tensorflow/ML, <a href="{{@site.url}}/resume#backetd">...</a></dd>
+      </dl>      
+      <dl class="shard lh-title flex flex-column w-100 w-auto-l mw6-l mr0 mr4-l items-center justify-center">
+          <dt class="pb1-l f4 fw3 ml0 mr1 mv1 heading-sans">Frontend:</td>
+          <dd class="tc f4 f4-l ml0 fw3">React/Redux/Saga, AngularJS, <a href="{{@site.url}}/resume#frontend">...</a></dd>
+      </dl>
+      <dl class="shard lh-title flex flex-column w-100 w-auto-l mw6-l mr0 mr4-l items-center justify-center">
+          <dt class="pb1-l f4 fw3 ml0 mr1 mv1 heading-sans">Interests:</dt>
+          <dd class="tc f4 f4-l ml0 fw3">Nature, Technology, Storytelling, <a href="{{@site.url}}/resume#fun">...</a></dd>
+      </dl>
+      <dl class="shard lh-title flex flex-column w-100 w-auto-l mw4-l mr0 mr4-l items-center justify-center">
+          <dt class="pb1-l f4 fw3 ml0 mr1 mv1 heading-sans">
+            <a target="_blank" href="https://twitter.com/bauskas" title="Twitter">Twitter</a>
+            </dt>
+      </dl>
+      <dl class="shard lh-title flex flex-column w-100 w-auto-l mw4-l mr0 mr4-l items-center justify-center">
+          <dt class="pb1-l f4 fw3 ml0 mr1 mv1 heading-sans">
+            <a target="blank" href="https://www.linkedin.com/in/bausk" title="LinkedIn">LinkedIn</a>
+          </dt>
+      </dl>
     </div>
   </header>
 </section>

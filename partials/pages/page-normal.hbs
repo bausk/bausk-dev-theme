@@ -1,0 +1,51 @@
+
+{{#post}}
+<article class="post-content {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+  <header class="heading-sans cover bg-center">
+    <div class="flex items-center justify-center bg-center cover" style="background-image: url({{feature_image}});">
+      <div class="tc max-width-large ml0 mr0 mt5 mb1">
+        <h1 class="f1-l lh-title dib bg-white heading-sans ttu ph5 pv4 mt3 mb0 heading-styled {{#unless feature_image}}no-image-header{{/unless}}">
+          {{title}}
+        </h1>
+      </div>
+    </div>
+  </header>
+
+
+  <section
+    class="layout-post lh-copy f5 f4-l bg-white sans-serif mauto max-width-blog near-black ph5-l pt2-l pb3-l ph1 pv3">
+    <span class="ttu f6 b tracked gray db heading-sans">
+      <div class="flex justify-around items-center flex-row-l flex-column">
+        <span class="pv1">
+          Last updated <time datetime="{{date published_at}}">{{date published_at format="MMMM DD, YYYY"}}</time>
+        </span>
+        <span class="flex items-center pv1">Download:
+          <a href="{{asset "abausk-resume.pdf"}}" class='image-link file-link ph1 f2-l f3'><i class="fas fa-file-pdf"></i></a>
+          <a href="{{asset "abausk-resume.docx"}}" class='image-link file-link ph1 f2-l f3'><i class="fas fa-file-word"></i></a>
+        </span>
+      </div>
+    </span>
+    {{#if custom_excerpt}}
+    <h2>Summary</h2>
+        <summary class="post-excerpt ">{{custom_excerpt}}</summary>
+    {{/if}}
+
+    {{content}}
+  </section>
+</article>
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+// Layout Script for Ghost Gallery Cards
+var images = document.querySelectorAll('.kg-gallery-image img');
+images.forEach(function (image) {
+    var container = image.closest('.kg-gallery-image');
+    var width = image.attributes.width.value;
+    var height = image.attributes.height.value;
+    var ratio = width / height;
+    container.style.flex = ratio + ' 1 0%';
+})
+</script>
+{{/contentFor}}

@@ -1,0 +1,80 @@
+
+{{#post}}
+<article class="post-content {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+  <header class="heading-sans cover bg-center">
+    <div class="flex items-center justify-center bg-center cover" style="background-image: url({{feature_image}});">
+      <div class="tc max-width-large ml0 mr0 mt5 mb1">
+        <h1 class="f1-l lh-title dib bg-white heading-sans ttu ph5 pv4 mt3 mb0 heading-styled {{#unless feature_image}}no-image-header{{/unless}}">
+          {{title}}
+        </h1>
+      </div>
+    </div>
+  </header>
+
+
+  <section
+    class="layout-post lh-copy f5 f4-l bg-white sans-serif mauto max-width-blog near-black ph5-l pt5-l pb3-l ph1 pv3">
+    <span class="ttu f6 b tracked gray db heading-sans">
+      <div class="flex justify-between items-center flex-row-l flex-column">
+        <time class="pv1" datetime="{{date published_at}}">{{date published_at format="MMMM DD, YYYY"}}</time>
+        <span class="pv1">{{date published_at timeago="true"}}</span>
+      </div>
+    </span>
+
+    {{#if custom_excerpt}}
+        <summary class="post-excerpt">{{custom_excerpt}}</summary>
+    {{/if}}
+
+    {{content}}
+  </section>
+
+  {{!-- Email subscribe form at the bottom of the page --}}
+  {{#if @labs.members}}
+      {{> subscribe-form}}
+  {{/if}}
+</article>
+
+{{/post}}
+
+<section class="flex flex-row items-center sans-serif mauto max-width-blog near-black ph5-l pv4 ph3">
+  <div class="pl0 pr3">
+    <img src="{{asset 'images/avatar-small.jpg'}}" alt="Author: Oleksander Bausk" class="br-100 mw3 mw4-l" />
+  </div>
+  <div class="pl4-l flex flex-column">
+    <p class="fw6 f5 f4-l mv0 lh-copy sans-serif-secondary">
+      {{date published_at format="YYYY-MM-DD"}} / By Oleksander Bausk
+    </p>
+    <p class="mv0 f5 f4-l mw6-l lh-copy sans-serif-secondary gray">
+      Software engineer, generalist, and dog of war.
+    </p>
+    <p class="mv0 f5 f4-l mw6-l lh-copy sans-serif-secondary gray">
+      🤙 <a href="https://t.me/bausk">Telegram</a>, <a href="https://linkedin.com/bausk">Linkedin</a> or <a href="https://twitter.com/bauskas">Twitter</a>.
+    </p>
+  </div>
+    <div class="post-authors">
+        
+    </div>
+
+</section>
+
+  {{!--
+  <section class="post-content-comments">
+      If you want to embed comments, this is a good place to do it!
+  </section>
+  --}}
+
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+// Layout Script for Ghost Gallery Cards
+var images = document.querySelectorAll('.kg-gallery-image img');
+images.forEach(function (image) {
+    var container = image.closest('.kg-gallery-image');
+    var width = image.attributes.width.value;
+    var height = image.attributes.height.value;
+    var ratio = width / height;
+    container.style.flex = ratio + ' 1 0%';
+})
+</script>
+{{/contentFor}}

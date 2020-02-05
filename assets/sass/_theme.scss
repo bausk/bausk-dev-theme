@@ -4,11 +4,13 @@ $accent-color-primary-tame: #ffaf50;
 $accent-color-secondary-tame: #ff75bf;
 $background-color-primary: #dfe4fe;
 
-$gold            : rgb(212, 203, 75);
-$primary-color   : $gold;
+$primary-color   : $accent-color-primary-bright;
 $secondary-color : #ddd;
-$mark-color      : #feda9e;
+$mark-color      : #ffedeb;
+$tint-variant1   : #e4ddfe;
+$tint-variant2   : #b3fff8;
 
+$background-color: rgba(49,78,39,.1);
 $accent-color: #fa5e21;
 $tame-color: #d98dff;
 
@@ -17,16 +19,10 @@ $line-height     : 1.8em;
 
 $link-color : #a84aff;
 $link-text-color: #181716;
-
+$background-tones: $mark-color;
+$background-tame-cold: $tint-variant1;
+$tint-cold: $tint-variant1;
 
 .primary {
   color: $primary-color;
-}
-
-.bg-primary {
-//   background-color: $near-white;
-}
-
-.bg-inverted {
-  background-color: #681533;
 }

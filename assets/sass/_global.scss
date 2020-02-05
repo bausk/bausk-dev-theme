@@ -3,9 +3,6 @@
   color: $white;
 }
 
-// normal text is .lh-copy ~ 1.8
-// ensure title are ~ 1.25
-// credits: https://twitter.com/steveschoger/status/968519052800024577
 h1,
 h2,
 h3,
@@ -23,21 +20,13 @@ h6 {
   color: $accent-color-primary-tame;
 }
 
-.gradient {
-  @extend .cover;
-  @extend .bg-center;
-  background: linear-gradient(0deg,#ffffff, #f5e8ef);
-  //position: sticky;
-  // background-image: url('/assets/images/blog-header.png');
-}
-
 .year-plaque {
   position: relative;
   &::after {
     content: "";
     width: 0.5em;
-    background: -webkit-gradient(linear,left top,right top,from(#ffaf50),to(#ff75bf));
-    background: linear-gradient(0deg,#ffaf50,#ff75bf);
+    background: -webkit-gradient(linear,left top,right top,from($accent-color-primary-tame),to($accent-color-secondary-tame));
+    background: linear-gradient(0deg,$accent-color-primary-tame,$accent-color-secondary-tame);
     height: 60%;
     position: absolute;
     bottom: 20%;
@@ -69,16 +58,28 @@ h6 {
 }
 
 .post-header-background {
-  clip-path: polygon(6% 17%, 94% 8%, 92% 87%, 8% 94%);
+  clip-path: polygon(0.5rem 1.5rem,calc(100% - .5rem) 1rem,calc(100% - .8rem) calc(100% - 1rem),.8rem calc(100% - .8rem));
   margin: 0;
-  padding: 2rem 4rem;
+  padding: 2rem;
 }
 
 .heading-styled {
-  clip-path: polygon(6% 17%,94% 8%,92% 87%,8% 94%);
+  clip-path: polygon(0.5rem 1.5rem,calc(100% - .5rem) 1rem,calc(100% - .8rem) calc(100% - 1rem),.8rem calc(100% - .8rem));
+  padding: 2rem;
 }
 
-.link-underline {
+.shard {
+  background-color: $background-color;
+  clip-path: polygon(.2rem .5rem,calc(100% - .5rem) .3rem,calc(100% - .1rem) calc(100% - .3rem),.5rem calc(100% - .5rem));
+  padding: 1rem;
+}
+
+.no-image-header {
+  background-color: $background-color;
+}
+
+a, .link-underline {
+  color: $near-black;
   transition: all .15s ease-in !important;
   text-decoration: none;
   line-height: normal;
@@ -86,16 +87,16 @@ h6 {
   z-index: 1;
   .white & {
     &::after {
-      background: -webkit-gradient(linear,left top,right top,from(#d47807),to(#e52e71));
-      background: linear-gradient(90deg,#d47807,#e52e71);
+      background: -webkit-gradient(linear,left top,right top,from($accent-color-primary-bright),to($accent-color-secondary-bright));
+      background: linear-gradient(90deg,$accent-color-primary-bright,$accent-color-secondary-bright);
     }
   }
   &::after {
     content: "";
     transition: all .15s ease-in !important;
     height: 0.2em;
-    background: -webkit-gradient(linear,left top,right top,from(#d47807),to(#ff75bf));
-    background: linear-gradient(90deg,#ffaf50,#ff75bf);
+    background: -webkit-gradient(linear,left top,right top,from($accent-color-primary-tame),to($accent-color-secondary-tame));
+    background: linear-gradient(90deg,$accent-color-primary-tame,$accent-color-secondary-tame);
     width: 100%;
     position: absolute;
     bottom: 0.12em;
@@ -110,57 +111,22 @@ h6 {
   }
 }
 
+.file-link {
+  color: $accent-color;
+  &:hover {
+    color: $accent-color-secondary-tame;
+  }
+}
+
+.image-link {
+  &::after {
+    display: none;
+  }
+}
+
 .external-icon {
   color: $gray;
   font-size: 1em;
-}
-
-.link-dotted {
-  text-decoration-style: dotted;
-  text-decoration-color: $secondary-color;
-  text-decoration-line: underline;
-  text-underline-position: under;
-  &:hover {
-    animation: zomg 1.2s infinite;
-  }
-}
-
-.animate-glitch {
-  animation: glitch 0.9s infinite;
-}
-
-@keyframes zomg {
-  0% {
-    color: $primary-color;
-  }
-  25% {
-    color: $white;
-  }
-  50% {
-    color: $silver;
-  }
-  75% {
-    color: $moon-gray;
-  }
-  100% {
-    color: $mid-gray;
-  }
-}
-
-@keyframes glitch {
-  0%,
-  100% {
-    filter: invert(0) saturate(100%) hue-rotate(0deg);
-  }
-  25% {
-    filter: invert(10%) saturate(500%) hue-rotate(180deg);
-  }
-  50% {
-    filter: invert(10%) saturate(300%) hue-rotate(300deg);
-  }
-  75% {
-    filter: invert(10%) saturate(500%) hue-rotate(90deg);
-  }
 }
 
 @keyframes blink {
@@ -178,20 +144,6 @@ h6 {
 .selectedText {
   font-style: normal;
   background: $primary-color;
-}
-
-#title {
-  &::after {
-    content: " ";
-    display: inline-block;
-    height: 43px;
-    position: relative;
-    top: 8px;
-    margin-left: 4px;
-    width: 2px;
-    background: $primary-color;
-    animation: blink 1s step-start 0s infinite;
-  }
 }
 
 @keyframes fadeIn {
@@ -239,4 +191,17 @@ h6 {
 
 .heading-sans {
   font-family: Oswald, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+.sans-serif-secondary {
+  font-family: 'Roboto Condensed', Oswald, Segoe UI, sans-serif
+}
+
+code, pre {
+  font-family: 'Fira Code', Consolas, monospace!important;
+  font-size: 0.9em!important;
+}
+
+pre {
+  padding: 0.7em!important;
 }
